@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "pangch-profile-to-block-mod",
+  "version": "${version}",
+  "name": "Pangch-Profile-To-Block-Mod",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/pangch-profile-to-block-mod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "pangch.pangchProfileToBlockMod.client.PangchProfileToBlockModDataGenerator"
+    ],
+    "client": [
+      "pangch.pangchProfileToBlockMod.client.PangchProfileToBlockModClient"
+    ],
+    "main": [
+      "pangch.pangchProfileToBlockMod.PangchProfileToBlockMod"
+    ]
+  },
+  "mixins": [
+    "pangch-profile-to-block-mod.mixins.json",
+    {
+      "config": "pangch-profile-to-block-mod.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
